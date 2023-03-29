@@ -25,3 +25,9 @@ export const ADATLISTA = [
         kor: 4,
     },
 ]
+
+export const kulcsLista = {
+    nev : "Név",
+    kor: "Kor",
+    fajta: "Fajta"
+}
