@@ -40,5 +40,7 @@ function megjelenit(adat, tarolo){
 }
 
 function esemeny(lista, kulcs){
+
+  
   
 }
