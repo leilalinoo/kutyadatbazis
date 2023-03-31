@@ -9,15 +9,6 @@ $(function () {
 });
 
 function osszeallit(lista) {
-  /*let txt =
-    '<div class="container mt-3"><table class="table"><thead class="table-dark"><tr><td id="#nev">Név⇅</td><td id="#kor">Kor⇅</td><td id="#fajta">Fajta⇅</td></thead><tbody>';
-
-  for (let index = 0; index < lista.length; index++) {
-    txt += `<tr><th>${lista[index].nev}</th><td>${lista[index].kor}</td><td>${lista[index].fajta}</td></tr>`;
-  }
-  txt += "</tbody></table></div>";
-  return txt;*/
-
   let txt = "<div class = 'table-responsive'>";
   txt += "<table class = 'table table-striped table-bordered table-hover'>";
   txt += "<thead class = 'table-dark'> <tr>";
