@@ -1,8 +1,10 @@
 import { ADATLISTA } from "./adat.js";
 import { kulcsLista } from "./adat.js";
 import { rendezes } from "./rendezesek.js";
-let irany = 1;
+import { szures } from "./szures.js";
+import { szuresKorra } from "./szures.js";
 
+let irany = 1;
 
 $(function () {
   init();
@@ -20,8 +22,40 @@ function init() {
     //console.log(event.target.id);
     kulcs = event.target.id;
     rendezes(ADATLISTA, kulcs, irany);
-    irany *= -1
-    torles(ADATLISTA);
+    irany *= -1;
+
+    init();
+  });
+
+  const NEVINPUTELEM = $("#nevInput");
+  const FAJTAINPUTELEM = $("#fajtaInput");
+  const KORINPUTELEM = $("#korInput");
+
+  NEVINPUTELEM.on("click", function () {
+    let nevErtek = NEVINPUTELEM.val().toLowerCase();
+    console.log(nevErtek);
+    let szurtlista = szures(ADATLISTA, "nev", nevErtek);
+    console.log(szurtlista);
+  });
+
+  FAJTAINPUTELEM.on("keyup", function () {
+    let fajtaErtek = NEVINPUTELEM.val().toLowerCase();
+    console.log(fajtaErtek);
+    let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
+    console.log(szurtlista);
+  });
+
+  KORINPUTELEM.on("click", function () {
+    let korErtek = NEVINPUTELEM.val().toLowerCase();
+    console.log(korErtek);
+    let szurtlista = szuresKorra(ADATLISTA, "kor", korErtek);
+    console.log(szurtlista);
+  });
+
+  const TORLES = $(".deletebtn");
+  TORLES.on("click", function () {
+    let torolt = event.target.id;
+    ADATLISTA.splice(torolt, 1);
     init();
   });
 }
@@ -45,7 +79,7 @@ function osszeallit(lista) {
         txt += `<td> ${element}</td>`;
       }
     }
-    txt += `<td> <button class="btn torol" id="t${index}">✖</button></td>"`;
+    txt += `<td> <button class="deletebtn" id="t${index}">✖</button></td>`;
     txt += `</tr>`;
   }
   txt += "</table>";
@@ -55,15 +89,4 @@ function osszeallit(lista) {
 
 function megjelenit(adat, tarolo) {
   tarolo.html(adat);
-}
-
-function torles(lista) {
-  for (let index = 0; index < lista.length; index++) {
-    const TOROL = $(`#t${index}`);
-    TOROL.on("click", function () {
-      let torolt = event.target.id;
-      $(torolt).remove();
-      console.log(torolt);
-    });
-  }
 }
