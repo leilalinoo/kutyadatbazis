@@ -47,7 +47,7 @@ function init() {
   KORINPUTELEM.on("input", function () {
     let korErtek = KORINPUTELEM.val().toLowerCase();
     console.log(korErtek);
-    let szurtlista = szuresKorra(ADATLISTA, "kor", korErtek);
+    let szurtlista = szures(ADATLISTA, "kor", korErtek);
     console.log(szurtlista);
   });
 
