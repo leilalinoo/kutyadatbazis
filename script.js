@@ -27,29 +27,43 @@ function init() {
     init();
   });
 
+  const ujkuty = {};
   const NEVINPUTELEM = $("#nevInput");
   const FAJTAINPUTELEM = $("#fajtaInput");
   const KORINPUTELEM = $("#korInput");
+  const FELVETELBTN = $("#felvetel");
 
-  NEVINPUTELEM.on("click", function () {
+  ujkuty.nev = NEVINPUTELEM.value;
+  ujkuty.fajta = FAJTAINPUTELEM.value;
+  ujkuty.kor = KORINPUTELEM.value;
+  ADATLISTA.push(ujkuty);
+
+  /*NEVINPUTELEM.on("click", function () {
     let nevErtek = NEVINPUTELEM.val().toLowerCase();
     console.log(nevErtek);
     let szurtlista = szures(ADATLISTA, "nev", nevErtek);
     console.log(szurtlista);
+    init();
   });
 
   FAJTAINPUTELEM.on("keyup", function () {
-    let fajtaErtek = NEVINPUTELEM.val().toLowerCase();
+    let fajtaErtek = FAJTAINPUTELEM.val().toLowerCase();
     console.log(fajtaErtek);
     let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
     console.log(szurtlista);
+    init();
   });
 
   KORINPUTELEM.on("click", function () {
-    let korErtek = NEVINPUTELEM.val().toLowerCase();
+    let korErtek = KORINPUTELEM.val().toLowerCase();
     console.log(korErtek);
     let szurtlista = szuresKorra(ADATLISTA, "kor", korErtek);
     console.log(szurtlista);
+    init();
+  });*/
+
+  FELVETELBTN.on("click", function () {
+    
   });
 
   const TORLES = $(".deletebtn");

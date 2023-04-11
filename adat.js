@@ -33,6 +33,7 @@ export const ADATLISTA = [
 
 export const kulcsLista = {
     nev : "Név",
+    fajta: "Fajta",
     kor: "Kor",
-    fajta: "kepek/Fajta"
+    kep: ""
 }
