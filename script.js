@@ -2,7 +2,6 @@ import { ADATLISTA } from "./adat.js";
 import { kulcsLista } from "./adat.js";
 import { rendezes } from "./rendezesek.js";
 import { szures } from "./szures.js";
-import { szuresKorra } from "./szures.js";
 
 let irany = 1;
 
@@ -27,43 +26,29 @@ function init() {
     init();
   });
 
-  const ujkuty = {};
   const NEVINPUTELEM = $("#nevInput");
   const FAJTAINPUTELEM = $("#fajtaInput");
   const KORINPUTELEM = $("#korInput");
-  const FELVETELBTN = $("#felvetel");
 
-  ujkuty.nev = NEVINPUTELEM.value;
-  ujkuty.fajta = FAJTAINPUTELEM.value;
-  ujkuty.kor = KORINPUTELEM.value;
-  ADATLISTA.push(ujkuty);
-
-  /*NEVINPUTELEM.on("click", function () {
+  NEVINPUTELEM.on("input", function () {
     let nevErtek = NEVINPUTELEM.val().toLowerCase();
     console.log(nevErtek);
     let szurtlista = szures(ADATLISTA, "nev", nevErtek);
     console.log(szurtlista);
-    init();
   });
 
-  FAJTAINPUTELEM.on("keyup", function () {
+  FAJTAINPUTELEM.on("input", function () {
     let fajtaErtek = FAJTAINPUTELEM.val().toLowerCase();
     console.log(fajtaErtek);
     let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
     console.log(szurtlista);
-    init();
   });
 
-  KORINPUTELEM.on("click", function () {
+  KORINPUTELEM.on("input", function () {
     let korErtek = KORINPUTELEM.val().toLowerCase();
     console.log(korErtek);
     let szurtlista = szuresKorra(ADATLISTA, "kor", korErtek);
     console.log(szurtlista);
-    init();
-  });*/
-
-  FELVETELBTN.on("click", function () {
-    
   });
 
   const TORLES = $(".deletebtn");
