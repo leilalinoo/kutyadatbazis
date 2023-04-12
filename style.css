@@ -2,6 +2,50 @@
     margin: 15px;
 }
 main{
+    width: 80%;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "h h h"
+    "n n n"
+    "as as as"
+    "a a a"
+    "f f f";
+}
+
+nav{
+    grid-area: n;
+}
+header{
+    grid-area: h;
+}
+article{
+    grid-area: a;
+}
+aside{
+    grid-area: as;
+}
+
+footer{
+    grid-area: g;
+}
+
+/*ADMIN*/
+*{
+    padding: 5px;
+}
+
+.kepek{
+    width: 100px;
+}
+
+fieldset{
+   display: inline; 
+}
+
+@media screen and (max-width:700px){
+    fieldset{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }

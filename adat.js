@@ -29,6 +29,18 @@ export const ADATLISTA = [
         kor: 4,
         kep:"kepek/Mia.jpg",
     },
+    {
+        nev: "Szotyi",
+        fajta: "Keverék",
+        kor: 1,
+        kep:"kepek/Mia.jpg",
+    },
+    {
+        nev: "Mázli",
+        fajta: "Labrador",
+        kor: 13,
+        kep:"kepek/Mia.jpg",
+    },
 ]
 
 export const kulcsLista = {

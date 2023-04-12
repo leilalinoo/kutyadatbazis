@@ -31,25 +31,33 @@ function init() {
   const KORINPUTELEM = $("#korInput");
 
   NEVINPUTELEM.on("input", function () {
-    let nevErtek = NEVINPUTELEM.val().toLowerCase();
-    console.log(nevErtek);
+    let nevErtek = NEVINPUTELEM.val();
+    //console.log(nevErtek);
     let szurtlista = szures(ADATLISTA, "nev", nevErtek);
-    console.log(szurtlista);
+    //console.log(szurtlista);
+    let tartalom = osszeallit(szurtlista);
+    $("table").replaceWith(tartalom);
   });
 
   FAJTAINPUTELEM.on("input", function () {
-    let fajtaErtek = FAJTAINPUTELEM.val().toLowerCase();
-    console.log(fajtaErtek);
+    let fajtaErtek = FAJTAINPUTELEM.val();
+    //console.log(fajtaErtek);
     let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
-    console.log(szurtlista);
+    //console.log(szurtlista);
+    let tartalom = osszeallit(szurtlista);
+    $("table").replaceWith(tartalom);
   });
 
   KORINPUTELEM.on("input", function () {
-    let korErtek = KORINPUTELEM.val().toLowerCase();
-    console.log(korErtek);
+    let korErtek = KORINPUTELEM.val();
+    //console.log(korErtek);
     let szurtlista = szures(ADATLISTA, "kor", korErtek);
-    console.log(szurtlista);
+    //console.log(szurtlista);
+    let tartalom = osszeallit(szurtlista);
+    $("table").replaceWith(tartalom);
   });
+
+  ujElem(ADATLISTA);
 
   const TORLES = $(".deletebtn");
   TORLES.on("click", function () {
@@ -74,6 +82,9 @@ function osszeallit(lista) {
       const element = object[key];
       if (key === "nev") {
         txt += `<th> ${element} </th>`;
+      }
+      else if(key === "kep"){
+        txt += `<th><div><img src = ${lista[index].kep} class = "kepek"></div></th>`
       } else {
         txt += `<td> ${element}</td>`;
       }
@@ -88,4 +99,22 @@ function osszeallit(lista) {
 
 function megjelenit(adat, tarolo) {
   tarolo.html(adat);
+}
+
+function ujElem(lista) {
+  const NEV = $("#ujkutyaneve");
+  const FAJTA = $("#ujkutyafaja");
+  const KOR = $("#ujkutyakora");
+  const KULDES = $("#felvetel");
+  KULDES.on("click", function (event) {
+    event.preventDefault();
+    const UJELEM = {
+      nev: NEV.val(),
+      fajta: FAJTA.val(),
+      kor: KOR.val(),
+    };
+    lista.push(UJELEM);
+    console.log(UJELEM)
+    init();
+  });
 }
