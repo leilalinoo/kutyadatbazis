@@ -1,8 +1,7 @@
 import { ADATLISTA } from "./adat.js";
 import { kulcsLista } from "./adat.js";
 import { rendezes } from "./rendezesek.js";
-import { szures } from "./szures.js";
-//import { szuresKorra } from "./szures.js";
+import { szures, szuresKorra } from "./szures.js";
 
 let irany = 1;
 
@@ -49,10 +48,10 @@ function init() {
     $("table").replaceWith(tartalom);
   });
 
-  KORINPUTELEM.on("input", function () {
+  KORINPUTELEM.on("change", function () {
     let korErtek = KORINPUTELEM.val();
     //console.log(korErtek);
-    let szurtlista = szures(ADATLISTA, "kor", korErtek);
+    let szurtlista = szuresKorra(ADATLISTA, "kor", korErtek);
     //console.log(szurtlista);
     let tartalom = osszeallit(szurtlista);
     $("table").replaceWith(tartalom);
