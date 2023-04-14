@@ -2,6 +2,7 @@ import { ADATLISTA } from "./adat.js";
 import { kulcsLista } from "./adat.js";
 import { rendezes } from "./rendezesek.js";
 import { szures } from "./szures.js";
+//import { szuresKorra } from "./szures.js";
 
 let irany = 1;
 
