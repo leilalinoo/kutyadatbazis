@@ -27,7 +27,8 @@ aside{
 }
 
 footer{
-    grid-area: g;
+    grid-area: f;
+    text-align: center;
 }
 
 /*ADMIN*/
