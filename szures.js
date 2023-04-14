@@ -5,11 +5,11 @@ export function szures(lista, kulcs, szuresiFeltetel) {
   return SZURTLISTA;
 }
 
-/*export function szuresKorra(lista, kulcs, szuresiFeltetel) {
+export function szuresKorra(lista, kulcs, szuresiFeltetel) {
   let szurtLista = lista.filter(function (obj) {
-    console.log(obj.kor + szuresiFeltetel);
+    console.log(szuresiFeltetel);
     return eval(obj.kor + szuresiFeltetel);
   });
   console.log(szurtLista);
   return szurtLista;
-}*/
+}
