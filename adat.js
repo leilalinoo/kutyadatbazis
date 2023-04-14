@@ -33,7 +33,7 @@ export const ADATLISTA = [
         nev: "Szotyi",
         fajta: "Keverék",
         kor: 1,
-        kep:"kepek/Mia.jpg",
+        kep:"kepek/Kutya.jpg",
     },
     {
         nev: "Mázli",
