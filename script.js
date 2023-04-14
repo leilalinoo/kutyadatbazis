@@ -50,9 +50,7 @@ function init() {
 
   KORINPUTELEM.on("change", function () {
     let korErtek = KORINPUTELEM.val();
-    //console.log(korErtek);
     let szurtlista = szuresKorra(ADATLISTA, "kor", korErtek);
-    //console.log(szurtlista);
     let tartalom = osszeallit(szurtlista);
     $("table").replaceWith(tartalom);
   });
