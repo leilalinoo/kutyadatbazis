@@ -15,6 +15,10 @@ main{
     "f f f";
    
 }
+.fekete{
+    background-color: rgb(44, 43, 43);
+    color: whitesmoke;
+}
 body{
     background-image: url(style/hatter.jpeg);
     width:100%;

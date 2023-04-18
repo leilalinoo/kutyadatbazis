@@ -22,7 +22,7 @@ function osszeallit(lista) {
     </div>
     <img class="card-img-bottom" src="${lista[index].kep}" alt="Card image" style="width:100%">
     <p class="card-text">${lista[index].kor}, ${lista[index].fajta}</p>
-    <button  class="btn btn-primary modalBtn" data-toggle="modal" data-target="#myModal">Mutat</button>
+    <button class="fekete" class="btn btn-primary modalBtn" data-toggle="modal" data-target="#myModal">Mutat</button>
     </div>`;
   }
   txt += "</div>";
