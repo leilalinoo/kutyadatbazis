@@ -30,7 +30,11 @@ footer{
     grid-area: f;
     text-align: center;
 }
-
+/*Publikus*/
+.kozep{
+    width: 90%;
+    margin: auto;
+}
 /*ADMIN*/
 *{
     padding: 5px;
