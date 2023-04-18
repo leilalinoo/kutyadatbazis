@@ -1,6 +1,4 @@
 import { ADATLISTA } from "./adat.js";
-import { kulcsLista } from "./adat.js";
-import { rendezes } from "./rendezesek.js";
 let modalIndex = 0;
 $(function () {
   init();
@@ -49,7 +47,7 @@ function osszeallit(lista) {
     </div>
     <img class="card-img-bottom" src="${lista[index].kep}" alt="Card image" style="width:100%">
     <p class="card-text">Kor: ${lista[index].kor} <br> Fajta:  ${lista[index].fajta}<br></p>
-    </p><button id= "${index}" type="button" class="btn btn-primary mod" data-bs-toggle="modal" data-bs-target="#myModal">Mutat</button>
+    </p><button id= "${index}" type="button" class="btn btn-primary mod fekete" data-bs-toggle="modal" data-bs-target="#myModal">Mutat</button>
     </div>`;
   }
   txt += "</div>";

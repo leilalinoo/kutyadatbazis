@@ -79,4 +79,19 @@ fieldset{
         display: grid;
         grid-template-columns: 1fr;
     }
+    header{
+        text-align: right;
+        
+    }
+    
+}
+@media screen and (max-width:500px){
+    
+    header{
+      color: rgb(5, 5, 5);
+        
+    }
+    #reszp{
+        text-align: left;
+    }
 }
