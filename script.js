@@ -29,22 +29,23 @@ function init() {
   const NEVINPUTELEM = $("#nevInput");
   const FAJTAINPUTELEM = $("#fajtaInput");
   const KORINPUTELEM = $("#korInput");
-
-  NEVINPUTELEM.on("input", function () {
+  
+  NEVINPUTELEM.on("change", function () {
     let nevErtek = NEVINPUTELEM.val();
     //console.log(nevErtek);
     let szurtlista = szures(ADATLISTA, "nev", nevErtek);
     //console.log(szurtlista);
     let tartalom = osszeallit(szurtlista);
     $("table").replaceWith(tartalom);
+    console.log("igen");
   });
 
-  FAJTAINPUTELEM.on("input", function () {
+  FAJTAINPUTELEM.on("change", function () {
     let fajtaErtek = FAJTAINPUTELEM.val();
     //console.log(fajtaErtek);
     let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
     //console.log(szurtlista);
-    let tartalom = osszeallit(szurtlista);
+    let tartalom = osszeallit(szurtlista);    
     $("table").replaceWith(tartalom);
   });
 
@@ -66,7 +67,8 @@ function init() {
 }
 
 function osszeallit(lista) {
-  let txt = "<div class = 'table-responsive'>";
+  let txt = "";
+  txt = "<div class = 'table-responsive'>";
   txt += "<table class = 'table table-striped table-bordered table-hover'>";
   txt += "<thead class = 'table-dark'> <tr>";
   for (const key in kulcsLista) {
@@ -80,9 +82,8 @@ function osszeallit(lista) {
       const element = object[key];
       if (key === "nev") {
         txt += `<th> ${element} </th>`;
-      }
-      else if(key === "kep"){
-        txt += `<th><div><img src = ${lista[index].kep} class = "kepek"></div></th>`
+      } else if (key === "kep") {
+        txt += `<th><div><img src = ${lista[index].kep} class = "kepek"></div></th>`;
       } else {
         txt += `<td> ${element}</td>`;
       }
@@ -112,7 +113,7 @@ function ujElem(lista) {
       kor: KOR.val(),
     };
     lista.push(UJELEM);
-    console.log(UJELEM)
+    console.log(UJELEM);
     init();
   });
 }
