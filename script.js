@@ -15,6 +15,8 @@ function init() {
   megjelenit(txt, ARTICLEELEM);
   console.log(ADATLISTA);
 
+  ujElem(ADATLISTA);
+
   const FEJLEC = $("th");
   let kulcs;
   FEJLEC.on("click", function () {
@@ -31,38 +33,39 @@ function init() {
   const KORINPUTELEM = $("#korInput");
   
   NEVINPUTELEM.on("change", function () {
-    let nevErtek = NEVINPUTELEM.val();
+    let nevErtek = NEVINPUTELEM.val().charAt(0).toUpperCase();
     //console.log(nevErtek);
     let szurtlista = szures(ADATLISTA, "nev", nevErtek);
     //console.log(szurtlista);
     let tartalom = osszeallit(szurtlista);
-    $("table").replaceWith(tartalom);
-    console.log("igen");
+    $(".table-responsive").replaceWith(tartalom);
   });
 
   FAJTAINPUTELEM.on("change", function () {
-    let fajtaErtek = FAJTAINPUTELEM.val();
+    let fajtaErtek = FAJTAINPUTELEM.val().charAt(0).toUpperCase();
     //console.log(fajtaErtek);
     let szurtlista = szures(ADATLISTA, "fajta", fajtaErtek);
     //console.log(szurtlista);
     let tartalom = osszeallit(szurtlista);    
-    $("table").replaceWith(tartalom);
+    $(".table-responsive").replaceWith(tartalom);
   });
 
   KORINPUTELEM.on("change", function () {
     let korErtek = KORINPUTELEM.val();
     let szurtlista = szuresKorra(ADATLISTA, "kor", korErtek);
     let tartalom = osszeallit(szurtlista);
-    $("table").replaceWith(tartalom);
+    $(".table-responsive").replaceWith(tartalom);
   });
 
-  ujElem(ADATLISTA);
 
   const TORLES = $(".deletebtn");
   TORLES.on("click", function () {
     let torolt = event.target.id;
     ADATLISTA.splice(torolt, 1);
+    console.log(ADATLISTA)
+    console.log(torolt)
     init();
+    console.log(ADATLISTA)
   });
 }
 
@@ -76,7 +79,7 @@ function osszeallit(lista) {
   }
   txt += "<th></th></tr></thead>";
   for (let index = 0; index < lista.length; index++) {
-    txt += "<tr>";
+    txt += `<tr>`;
     const object = lista[index];
     for (const key in object) {
       const element = object[key];
@@ -88,7 +91,7 @@ function osszeallit(lista) {
         txt += `<td> ${element}</td>`;
       }
     }
-    txt += `<td> <button class="deletebtn" id="t${index}">✖</button></td>`;
+    txt += `<td> <button class="deletebtn" id="${index}">✖</button></td>`;
     txt += `</tr>`;
   }
   txt += "</table>";
@@ -113,7 +116,7 @@ function ujElem(lista) {
       kor: KOR.val(),
     };
     lista.push(UJELEM);
-    console.log(UJELEM);
+    //console.log(UJELEM);
     init();
   });
 }
