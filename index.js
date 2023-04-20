@@ -68,6 +68,7 @@ function modaltartalom(szam) {
   ("</p>");
   return txt;
 }
+
 function megjelenit(adat, tarolo) {
   tarolo.append(adat);
 }
