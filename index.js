@@ -17,11 +17,27 @@ function init() {
     modalIndex = $(this).attr("id");
     MODALHEAD.html(`<h1>${ADATLISTA[modalIndex].nev}</h1>`);
     const MODALBODY = $(".modal-body");
-    MODALBODY.html(`<button class="balgomb" id="${modalIndex}"><</button>
+    MODALBODY.html(`<button class="balgomb" ><</button>
     <img style="width: 86%"src="${ADATLISTA[modalIndex].kep}">
-    <button class="jobbgomb" id="${modalIndex}">></button><br>
+    <button class="jobbgomb" ">></button><br>
     <h2>Kora: ${ADATLISTA[modalIndex].kor}</h2><br>
     <h2>Kora: ${ADATLISTA[modalIndex].fajta}<br></h2>`);
+    
+    
+    
+  });
+  const JOBB = $(".jobbgomb");
+  JOBB.on("click", function () {
+    //  MODAL.html(modaltartalom(this.id));
+    const MODALHEAD = $(".modal-title");
+    modalIndex = $(this).attr("id");
+    MODALHEAD.html(`<h1>${ADATLISTA[modalIndex+1].nev}</h1>`);
+    const MODALBODY = $(".modal-body");
+    MODALBODY.html(`<button class="balgomb" "><</button>
+    <img style="width: 86%"src="${ADATLISTA[modalIndex+1].kep}">
+    <button class="jobbgomb" ">></button><br>
+    <h2>Kora: ${ADATLISTA[modalIndex+1].kor}</h2><br>
+    <h2>Kora: ${ADATLISTA[modalIndex+1].fajta}<br></h2>`);
     
     
     
