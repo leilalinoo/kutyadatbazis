@@ -12,10 +12,19 @@ function init() {
   console.log(GOMB);
 
   GOMB.on("click", function () {
-  //  MODAL.html(modaltartalom(this.id));
-   
+    //  MODAL.html(modaltartalom(this.id));
+    const MODALHEAD = $(".modal-title");
     modalIndex = $(this).attr("id");
-    console.log(modalIndex)
+    MODALHEAD.html(`<h1>${ADATLISTA[modalIndex].nev}</h1>`);
+    const MODALBODY = $(".modal-body");
+    MODALBODY.html(`<button class="balgomb" id="${modalIndex}"><</button>
+    <img src="${ADATLISTA[modalIndex].kep}">
+    <button class="jobbgomb" id="${modalIndex}">></button><br>
+    <h2>Kora: ${ADATLISTA[modalIndex].kor}</h2><br>
+    <h2>Kora: ${ADATLISTA[modalIndex].fajta}<br></h2>`);
+    
+    
+    
   });
 }
 
@@ -41,18 +50,18 @@ function osszeallit(lista) {
 function modaltartalom() {
   let txt = "";
   txt += `<div class="modal fade" id="myModal">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title"></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
-        Modal body..
+        
       </div>
 
       <!-- Modal footer -->
@@ -64,13 +73,7 @@ function modaltartalom() {
   </div>
 </div>
 `;
-    /*"<h2>" +
-    ADATLISTA[szam].nev +
-    "</h2><p><b>Kor:</b> " +
-    ADATLISTA[szam].kor +
-    "<br><b>Fajta: </b>";
-  ("</p>");*/
-  return txt
+  return txt;
 }
 function megjelenit(adat, tarolo) {
   tarolo.append(adat);
