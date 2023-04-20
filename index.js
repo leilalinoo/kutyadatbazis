@@ -1,6 +1,4 @@
 import { ADATLISTA } from "./adat.js";
-import { kulcsLista } from "./adat.js";
-import { rendezes } from "./rendezesek.js";
 let modalIndex = 0;
 $(function () {
   init();
@@ -9,15 +7,16 @@ function init() {
   const ARTICLEELEM = $("article");
   let txt = osszeallit(ADATLISTA);
   megjelenit(txt, ARTICLEELEM);
-  const GOMB = $(".mod");
+  const GOMB = $(".kattintott");
   const MODAL = $("#modbod");
   console.log(GOMB);
 
   GOMB.on("click", function () {
-    MODAL.html(modaltartalom(this.id));
-    modalIndex = this.id;
+  //  MODAL.html(modaltartalom(this.id));
+   
+    modalIndex = $(this).attr("id");
+    console.log(modalIndex)
   });
-
 }
 
 function osszeallit(lista) {
@@ -30,24 +29,48 @@ function osszeallit(lista) {
     </div>
     <img class="card-img-bottom" src="${lista[index].kep}" alt="Card image" style="width:100%">
     <p class="card-text">Kor: ${lista[index].kor} <br> Fajta:  ${lista[index].fajta}<br></p>
-    </p><button id= "${index}" type="button" class="btn btn-primary mod" data-bs-toggle="modal" data-bs-target="#myModal">Mutat</button>
+    </p><button id= "${index}" type="button" class="btn btn-primary kattintott fekete" data-bs-toggle="modal" data-bs-target="#myModal">Mutat</button>
     </div>`;
   }
   txt += "</div>";
   txt += "</div>";
+  txt += modaltartalom();
 
   return txt;
 }
-function modaltartalom(szam) {
+function modaltartalom() {
   let txt = "";
-  txt +=
-    "<h2>" +
+  txt += `<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Modal body..
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+`;
+    /*"<h2>" +
     ADATLISTA[szam].nev +
     "</h2><p><b>Kor:</b> " +
     ADATLISTA[szam].kor +
     "<br><b>Fajta: </b>";
-  ("</p>");
-  return txt;
+  ("</p>");*/
+  return txt
 }
 function megjelenit(adat, tarolo) {
   tarolo.append(adat);
