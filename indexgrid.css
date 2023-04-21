@@ -1,0 +1,22 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "h h h"
+    "n n n"
+    "a a a"
+    "f f f";
+}
+nav {
+  grid-area: n;
+}
+header {
+  grid-area: h;
+}
+article {
+  grid-area: a;
+}
+
+footer {
+  grid-area: f;
+}

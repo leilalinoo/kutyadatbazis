@@ -1,0 +1,47 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "h h h"
+    "n n n"
+    "as as as"
+    "a a a"
+    "f f f";
+}
+nav {
+  grid-area: n;
+}
+header {
+  grid-area: h;
+}
+article {
+  grid-area: a;
+}
+aside {
+  grid-area: as;
+}
+
+footer {
+  grid-area: f;
+}
+@media screen and (max-width:700px){
+    fieldset{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    header{
+        text-align: right;
+        
+    }
+    
+}
+@media screen and (max-width:500px){
+    
+    header{
+      color: rgb(5, 5, 5);
+        
+    }
+    #reszp{
+        text-align: left;
+    }
+}

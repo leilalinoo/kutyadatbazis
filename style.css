@@ -6,13 +6,7 @@ main{
     background-color: whitesmoke;
     width: 80%;
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "h h h"
-    "n n n"
-    "as as as"
-    "a a a"
-    "f f f";
+    
    
 }
 .fekete{
@@ -32,11 +26,9 @@ body{
 	
   background-attachment: fixed;
 }
-nav{
-    grid-area: n;
-}
+
 header{
-    grid-area: h;
+   
     height: 150px;
     color: rgb(60, 69, 51);
     font-weight: bold;
@@ -45,15 +37,9 @@ header{
     background-size:cover;
    
 }
-article{
-    grid-area: a;
-}
-aside{
-    grid-area: as;
-}
 
 footer{
-    grid-area: f;
+    
     text-align: center;
 }
 /*Publikus*/
