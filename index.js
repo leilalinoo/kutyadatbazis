@@ -48,7 +48,7 @@ function osszeallit(lista) {
   let txt = '<div class="kozep">';
   txt += '<div class="container mt-4 row">';
   for (let index = 0; index < lista.length; index++) {
-    txt += `<div class="card" class="card col-lg-3 col-md-4 col-sm-6 p-0" style="width:400px">
+    txt += `<div class="card" class="card col-lg-3 col-md-4 col-sm-6 p-0" style="width:300px">
     <div class="card-body"> <h4 class="card-title">${lista[index].nev}<br></h4>
     
     </div>
